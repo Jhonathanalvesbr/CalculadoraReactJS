@@ -1,0 +1,15 @@
+.tela {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #22252d;
+    height: 100vh;
+}
+
+.telaDisplay {
+    color: white;
+    display: flex;
+    justify-content: right;
+    margin-right: 3rem;
+    font-size: 2.5rem;
+}

@@ -1,0 +1,39 @@
+.botao {
+    background-color: #282b33;
+    min-width: 3rem;
+    min-height: 3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: .5rem;
+    margin-left: .5rem;
+    border-radius: 0.5rem;
+}
+
+.botaoVermelho {
+    background-color: #282b33;
+    min-width: 3rem;
+    min-height: 3rem;
+    color: #e18a8c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: .5rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    border-radius: 0.5rem;
+}
+
+.botaoVerde {
+    background-color: #282b33;
+    min-width: 3rem;
+    min-height: 3rem;
+    color: #25fed6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: .5rem;
+    margin-left: .5rem;
+    border-radius: 0.5rem;
+}
