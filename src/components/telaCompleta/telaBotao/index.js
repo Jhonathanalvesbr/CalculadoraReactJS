@@ -2,7 +2,7 @@ import { useState } from "react";
 import Botao from "./botao";
 import "./index.css"
 
-
+/* eslint no-eval: 0 */
 const TelaBotao = ({ setValor, valor }) => {
     const [hisotrico, setHistorico] = useState([]);
 
@@ -37,7 +37,13 @@ const TelaBotao = ({ setValor, valor }) => {
             return;
         }
         else {
-            setValor(valor + "" + getValor + "");
+
+            if (valor === '0') {
+                console.log(valor, getValor)
+                setValor(getValor);
+            }
+            else
+                setValor(valor + "" + getValor + "");
         }
         if (["limpar", "voltar", undefined].indexOf(getValor) === -1) {
             if ("pow" === getValor)
