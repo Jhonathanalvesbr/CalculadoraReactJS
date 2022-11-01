@@ -1,10 +1,8 @@
-import { useState } from "react";
 import Botao from "./botao";
 import "./index.css"
 
 /* eslint no-eval: 0 */
-const TelaBotao = ({ setValor, valor }) => {
-    const [hisotrico, setHistorico] = useState([]);
+const TelaBotao = ({ setValor, valor, historico, setHistorico, operacao, setOperacao }) => {
 
     function stripZeros(str) {
         return str.replace(/(^0+(?=\d))|(,?0+$)/g, '');
@@ -12,6 +10,7 @@ const TelaBotao = ({ setValor, valor }) => {
 
     const getValor = (getValor) => {
         if (getValor === "limpar") {
+            setOperacao([]);
             setValor("0")
             setHistorico([]);
         }
@@ -22,13 +21,13 @@ const TelaBotao = ({ setValor, valor }) => {
             setValor(valor + "**");
         }
         else if (getValor === "=") {
-            console.log(valor)
+            setOperacao(operacao => operacao.concat(valor + "" + getValor.substr(0, getValor.length - 2)));
             setValor(eval(stripZeros(valor)));
         }
         else if (getValor === "voltar") {
-            if (hisotrico.length > 0) {
-                setHistorico(hisotrico => { hisotrico.pop(hisotrico.length - 1); return hisotrico });
-                setValor(hisotrico[hisotrico.length - 1]);
+            if (historico.length > 0) {
+                setHistorico(historico => { historico.pop(historico.length - 1); return historico });
+                setValor(historico[historico.length - 1]);
             }
             else {
                 setHistorico([]);
@@ -37,9 +36,7 @@ const TelaBotao = ({ setValor, valor }) => {
             return;
         }
         else {
-
             if (valor === '0') {
-                console.log(valor, getValor)
                 setValor(getValor);
             }
             else
@@ -47,9 +44,9 @@ const TelaBotao = ({ setValor, valor }) => {
         }
         if (["limpar", "voltar", undefined].indexOf(getValor) === -1) {
             if ("pow" === getValor)
-                setHistorico(hisotrico => hisotrico.concat(valor + "**"));
+                setHistorico(historico => historico.concat(valor + "**"));
             else
-                setHistorico(hisotrico => hisotrico.concat(valor + ""));
+                setHistorico(historico => historico.concat(valor + ""));
 
         }
 

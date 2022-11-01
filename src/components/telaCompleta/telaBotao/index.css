@@ -1,11 +1,13 @@
-.telaBotao{
-    
+.telaBotao {
+
     display: flex;
     justify-content: space-around;
     min-height: 4rem;
     border-radius: 10rem;
 }
-.telaFundo{
+
+.telaFundo {
     background-color: #292d36;
     border-radius: 2rem;
+    margin: 0.3rem;
 }
