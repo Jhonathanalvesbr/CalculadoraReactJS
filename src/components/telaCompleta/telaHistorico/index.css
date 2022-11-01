@@ -1,0 +1,21 @@
+.historico {
+    margin-bottom: -1rem;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1rem;
+    margin-right: 1.5rem;
+}
+
+@media only screen and (min-width: 400px) {
+    .historico {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    .historico {
+
+        font-size: 1.5rem;
+    }
+}
